@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xếp Lịch Công Việc</title>
+
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+  <div class="action-buttons">
+    <button type="button" id="downloadPdfBtn">Tải PDF</button>
+    <button type="button" id="copyImageBtn">Sao chép ảnh</button>
+  </div>
+
+  <section class="control-panel">
+    <div class="control-panel__top">
+      <div>
+        <h3>Danh sách random</h3>
+        <p>Dán danh sách hoặc tải file văn bản. Có thể ngăn cách tên bằng xuống dòng, dấu phẩy, chấm phẩy hoặc tab.</p>
+      </div>
+
+      <div class="control-panel__buttons">
+        <label for="memberListFile" class="secondary-button">Tải danh sách</label>
+        <input type="file" id="memberListFile" accept=".txt,.csv,.tsv,text/plain">
+        <button type="button" id="randomizeAssignmentsBtn" class="secondary-button">Random lại</button>
+        <button type="button" id="clearListBtn" class="secondary-button secondary-button--light">Xóa danh sách</button>
+      </div>
+    </div>
+
+    <textarea
+      id="memberListInput"
+      class="control-panel__textarea"
+      placeholder="Ví dụ:
+AN
+BÌNH
+CHÂU
+DŨNG
+EMMANUEL
+..."
+    ></textarea>
+
+    <div class="control-panel__footer">
+      <span id="memberListCount">0 tên hợp lệ</span>
+      <span id="memberListStatus">Dán danh sách ngoài trước. Sau đó, cột nào nhập đủ 7 tên ở hàng 2–8 thì hệ thống mới hiển thị các nhóm bên dưới của chính cột đó.</span>
+    </div>
+  </section>
+
+  <div class="container" id="captureArea">
+    <header class="header">
+      <div class="logo">
+        <img src="././assets/Logo-thinh-vien-01.jpg" alt="Logo Thỉnh viện">
+      </div>
+      <div class="institution-info">
+        <h3>TỈNH DÒNG NỮ VƯƠNG CÁC THÁNH TỬ ĐẠO VIỆT NAM</h3>
+        <h3>THỈNH VIỆN THÁNH GIOAN TÔNG ĐỒ</h3>
+        <address>
+          <p>70/1 Tổ 1, Kp. Bình Đường 3, P. Dĩ An, Tp. Hồ Chí Minh.</p>
+          <p>Điện thoại: 0985188795 | Email: thinhviendaminh@gmail.com</p>
+          <p>Website: <a href="https://www.thinhviendaminh.net" target="_blank">https://www.thinhviendaminh.net</a></p>
+        </address>
+      </div>
+    </header>
+
+    <h2 class="title-line" id="titleLine">
+      <span class="title-fixed">LỊCH CÔNG TÁC MÙA</span>
+      <span id="editableSuffix" class="title-suffix" contenteditable="true" spellcheck="false"></span>
+    </h2>
+
+    <div class="schedule-table-wrap">
+      <table class="schedule-table">
+        <tbody id="scheduleTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="././assets/js/script.js"></script>
+</body>
+
+</html>
