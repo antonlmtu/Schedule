@@ -1288,6 +1288,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   if (titleLine && editableSuffix) {
+    const previousNode = editableSuffix.previousSibling;
+    if (previousNode && previousNode.nodeType === Node.TEXT_NODE) {
+      previousNode.textContent = "";
+    }
+
     titleLine.addEventListener("dblclick", function () {
       placeCaretAtEnd(editableSuffix);
     });
